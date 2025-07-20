@@ -17,6 +17,4 @@ if time_bound == "yes":
 else:
     urgency_msg = "This task is not time-sensitive."
 
-reminder = f"Reminder: '{task}'. {priority_msg} {urgency_msg}"
-
-print("\n" + reminder)
+print(f"Reminder: '{task}'. {priority_msg} {urgency_msg}")
