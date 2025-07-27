@@ -20,4 +20,4 @@ if c_or_f.lower() == "f":
 elif c_or_f.lower() == "c":
     print(f"{temp}°C is {convert_to_fahrenheit(temp)}°F")
 else:
-    print ("Error: Invalid operation")
+    print ("Invalid temperature. Please enter a numeric value.")
