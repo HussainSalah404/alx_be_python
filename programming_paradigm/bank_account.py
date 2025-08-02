@@ -8,11 +8,14 @@ class BankAccount:
         self.account_balance += amount
 
     """amount removed to account balance"""
-    def withdraw(self, amount: float):
+    def withdraw(self, amount):
+        if amount > self.account_balance:
+            return False  # Withdrawal failed
         self.account_balance -= amount
-        return True
+        return True  # Withdrawal successful
 
     """displays the account balance after removing and adding amounts"""
     def display_balance(self):
         print("Current Balance:", self.account_balance)
+
 
