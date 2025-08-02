@@ -16,6 +16,7 @@ class BankAccount:
 
     """displays the account balance after removing and adding amounts"""
     def display_balance(self):
-        print(f"Current Balance: {self.account_balance:.2f}")
+        print(f"Current Balance: ${self.account_balance:.2f}")
+
 
 
