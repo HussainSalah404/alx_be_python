@@ -23,3 +23,36 @@ class Book:
     def is_available(self):
         """Returns True if the book is available, False otherwise."""
         return not self._is_checked_out
+
+class Library:
+    def __init__(self):
+        self._books = []  # private list to store Book instances
+
+    def add_book(self, book):
+        self._books.append(book)
+        print(f'Book "{book.title}" added to the library.')
+
+    def check_out_book(self, title):
+        for book in self._books:
+            if book.title == title and book.is_available():
+                book.check_out()
+                print(f'You have checked out "{book.title}".')
+                return
+        print(f'"{title}" is not available for checkout.')
+
+    def return_book(self, title):
+        for book in self._books:
+            if book.title == title and not book.is_available():
+                book.return_book()
+                print(f'You have returned "{book.title}".')
+                return
+        print(f'"{title}" is not currently checked out.')
+
+    def list_available_books(self):
+        available = [book for book in self._books if book.is_available()]
+        if not available:
+            print("No books are currently available.")
+        else:
+            print("Available books:")
+            for book in available:
+                print(f'- {book.title} by {book.author}')
